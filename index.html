@@ -1,0 +1,53 @@
+<title>沙湾猪杂粥</title>
+<body>
+<div id="app" class="mdui-container-fluid">
+    <div class="mdui-toolbar mdui-color-theme">
+        <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe5d2;</i></a>
+        <span class="mdui-typo-title">沙湾猪杂粥</span>
+        <div class="mdui-toolbar-spacer"></div>
+        <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
+        <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe5d5;</i></a>
+        <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe5d4;</i></a>
+    </div>
+
+    <div style="margin-bottom: 40%;margin-top: 10%">
+        <div class="mdui-typo-display-4 mdui-text-center">距离</div>
+        <div class="mdui-typo-display-4 mdui-text-center">沙湾猪杂粥</div>
+        <div class="mdui-typo-display-4 mdui-text-center">和</div>
+        <div class="mdui-typo-display-4 mdui-text-center">炭烧生蚝</div>
+        <div class="mdui-typo-display-4 mdui-text-center">只有</div>
+        <div class="mdui-typo-display-4 mdui-text-center">{{ text }}</div>
+        <div class="mdui-typo-display-4 mdui-text-center">秒</div>
+    </div>
+
+    <div class="mdui-progress">
+        <div class="mdui-progress-indeterminate"></div>
+    </div>
+</div>
+</body>
+<script src="//cdn.bootcss.com/vue/2.3.3/vue.min.js"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/mdui/0.2.1/css/mdui.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/mdui/0.2.1/js/mdui.min.js"></script>
+<script type="text/javascript">
+    var app = new Vue({
+        el: '#app',
+        data: {
+            text: 0
+        },
+        created: function () {
+            var self = this;
+            setInterval(function () {
+                var year = 2017;
+                var month = 7;
+                var day = 15;
+                var future = new Date(year, month - 1, day);
+                future.setHours(21);
+                future.setMinutes(0);
+                future.setSeconds(0);
+                dif = (future - new Date()) / 1000
+                self.text = dif.toFixed(2);
+            }, 50)
+        }
+    })
+</script>
+</body>
